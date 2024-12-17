@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disculpa Valeee </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>💙 ¿Me perdonas? 💙</h1>
+      <p>
+        Hola <span class="highlight">Valeeeeeeeeee</span>, perdón por lo de ayer, neta que te quiero mucho. 
+        (Si no me perdonas lloro).
+      </p>
+      <div class="buttons">
+        <button id="btn-yes">Sí, te perdono 😊</button>
+        <button id="btn-no">No 😠</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <img src="https://i.pinimg.com/736x/97/ff/08/97ff080a5800d0a4c6ed97069b6a0d62.jpg" alt="Gracias" class="modal-image">
+      <h2>¡Graciasssssss Tqm! 🥰</h2>
+      <p>Así se disculpa un programador. 💻</p>
+      <button id="close-modal">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const btnNo = document.getElementById("btn-no");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("close-modal");
+  
+    // Función para mover el botón "No"
+    const moveButton = () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      btnNo.style.position = "absolute";
+      btnNo.style.left = `${x}px`;
+      btnNo.style.top = `${y}px`;
+    };
+  
+    // Eventos para computadoras y móviles
+    btnNo.addEventListener("mouseover", moveButton); // Para computadoras
+    btnNo.addEventListener("touchstart", moveButton); // Para móviles
+  
+    // Abrir el modal al presionar "Sí"
+    document.getElementById("btn-yes").addEventListener("click", () => {
+      modal.classList.remove("hidden");
+    });
+  
+    // Cerrar el modal
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
